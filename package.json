@@ -17,7 +17,8 @@
     "prod": "webpack --mode production",
     "development": "webpack --mode development",
     "watch": "webpack --mode development --watch",
-    "dev": "vite"
+    "dev": "vite",
+    "build": "tsc -b && vite build"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
