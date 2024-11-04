@@ -12,13 +12,14 @@
   "author_uri": "https://salla.com",
   "text_domain": "salla",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
     "test": "vitest",
+    "test:ui": "vitest --ui",
     "production": "webpack --mode production",
     "prod": "webpack --mode production",
     "development": "webpack --mode development",
-    "watch": "webpack --mode development --watch",
-    "dev": "vite",
-    "build": "tsc -b && vite build"
+    "watch": "webpack --mode development --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

@@ -8,6 +8,7 @@ import Title from '../components/Title';
 import InputField from '../components/InputField';
 import ErrorMsg from '../components/ErrorMsg';
 import SubmitButton from '../components/buttons/LoadingButton';
+import LinkButton from '../components/buttons/LinkButton';
 
 const Register: React.FC = () => {
   
@@ -135,7 +136,7 @@ const Register: React.FC = () => {
             <InputField
               label="تأكيد كلمة المرور"
               type="password"
-              name="validate_password"
+              name="validate_password" 
               id="validate_password"
               value={inputValues.validate_password}
               onChange={handleInputChange}
@@ -148,7 +149,7 @@ const Register: React.FC = () => {
 
             <div className="flex gap-4">
               <SubmitButton isSubmitting={isSubmitting} title='التسجيل'/>
-              <a href='/login' className="text-primary underline p-2 text-md rounded-md">لديك حساب؟</a>
+              <LinkButton title='لديك حساب؟' href='/login'/>
             </div>
           </form>
         </div>

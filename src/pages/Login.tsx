@@ -7,7 +7,7 @@ import Title from '../components/Title';
 import InputField from '../components/InputField';
 import ErrorMsg from '../components/ErrorMsg';
 import SubmitButton from '../components/buttons/LoadingButton';
-import ForPasaButton from '../components/buttons/ForPasaButton';
+import LinkButton from '../components/buttons/LinkButton';
 
 
 const Login: React.FC = () => {
@@ -104,7 +104,7 @@ const Login: React.FC = () => {
             <ErrorMsg message={loginError}/>
             <div className="flex gap-4">
               <SubmitButton isSubmitting={isSubmitting} title='الدخول'/>
-              <ForPasaButton/>
+              <LinkButton title='ليس لديك حساب؟' href='/register'/>
             </div>
           </form>
         </div>
