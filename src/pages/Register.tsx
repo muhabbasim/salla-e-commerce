@@ -148,7 +148,7 @@ const Register: React.FC = () => {
 
             <div className="flex gap-4">
               <SubmitButton isSubmitting={isSubmitting} title='التسجيل'/>
-              <a href='/login' className="text-primary underline p-2 text-md rounded-md">ليك حساب؟</a>
+              <a href='/login' className="text-primary underline p-2 text-md rounded-md">لديك حساب؟</a>
             </div>
           </form>
         </div>
