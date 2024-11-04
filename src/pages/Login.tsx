@@ -87,7 +87,7 @@ const Login: React.FC = () => {
               id="email"
               value={inputValues.email}
               onChange={handleInputChange}
-              placeholder="اسم المستخدم.."
+              placeholder="البريد الالكتروني"
               error={errors.email}
             />
 

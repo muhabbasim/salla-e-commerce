@@ -103,13 +103,13 @@ const Register: React.FC = () => {
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col w-full">
             <InputField
-              label="البريد الالكتروني"
+              label="اسم المستخدم"
               type="username"
               name="username"
               id="username"
               value={inputValues.username}
               onChange={handleInputChange}
-              placeholder="اسم المستخدم.."
+              placeholder="اسم المستخدم"
               error={inputErrors.username}
             />
             <InputField
@@ -119,27 +119,27 @@ const Register: React.FC = () => {
               id="email"
               value={inputValues.email}
               onChange={handleInputChange}
-              placeholder="اسم المستخدم.."
+              placeholder="البريد الالكتروني"
               error={inputErrors.email}
             />
             <InputField
-              label="البريد الالكتروني"
+              label="كلمة المرور"
               type="password"
               name="password"
               id="password"
               value={inputValues.password}
               onChange={handleInputChange}
-              placeholder="اسم المستخدم.."
+              placeholder="كلمة المرور"
               error={inputErrors.password}
             />
             <InputField
-              label="البريد الالكتروني"
+              label="تأكيد كلمة المرور"
               type="password"
               name="validate_password"
               id="validate_password"
               value={inputValues.validate_password}
               onChange={handleInputChange}
-              placeholder="اسم المستخدم.."
+              placeholder="تأكيد كلمة المرور"
               error={inputErrors.validate_password}
             />
          
