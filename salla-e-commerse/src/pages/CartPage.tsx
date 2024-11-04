@@ -16,6 +16,7 @@ const CartPage: React.FC = () => {
 
       if( !currentUser ) {
         route('/login')
+        return
       } 
       console.log('Proceeding to checkout...');
       localStorage.removeItem('shopping-cart');

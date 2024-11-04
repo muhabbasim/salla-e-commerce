@@ -40,7 +40,7 @@ const Cart: React.FC<CartProps> = ({ cartProducts, onCheckout }) => {
     <main className="w-full main flex-auto">
       <div className="container">
         <div className="p-4 bg-white rounded-lg shadow-4xl">
-          <Title title='سلة المشتريات' className="text-lg"/>
+          <Title title='سلة المشتريات' className="text-lg  mb-6"/>
 
           <ul className="flex flex-col">
             {cartProducts?.map((product) => {

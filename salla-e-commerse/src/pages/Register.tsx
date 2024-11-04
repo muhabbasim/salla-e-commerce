@@ -1,10 +1,13 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { validate, ValidationError, ValidationRules } from '../utils/inputValidation';
 import { AxiosError } from 'axios';
-import Loader from '../components/Loader';
 import api from '@/context/apiRequest';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
+import InputField from '@/components/InputField';
+import Title from '@/components/Title';
+import ErrorMsg from '@/components/ErrorMsg';
+import SubmitButton from '@/components/buttons/LoadingButton';
 
 const Register: React.FC = () => {
   
@@ -95,40 +98,56 @@ const Register: React.FC = () => {
       <div className="container">
         <div className="p-2 sm:p-4 bg-white rounded-lg shadow-4xl sm:max-w-[700px] mx-auto">
           <div className="flex flex-col text-center items-center justify-center mb-6">
-            <h2 className="text-lg">إنشاء حساب جديد</h2>
-            <span className="text-xs text-gray-500">قم بإنشاء حساب جديد للتمتع بالتسوق</span>
+            <Title title='إنشاء حساب جديد' className='text-lg'/>
+            <Title title="قم بإنشاء حساب جديد للتمتع بالتسوق" className='text-md text-gray-500'/>
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col w-full">
-            <div className="mb-4">
-              <label className="block mb-2 text-md" htmlFor="username">اسم المستخدم</label>
-              <input type="text" name="username" id="username" value={inputValues.username} onChange={handleInputChange} className="w-full p-2 bg-white rounded-md border text-md" placeholder="اسم المستخدم.." />
-              {inputErrors.username && <div className='flex items-center justify-center'><p style={{ color: "red" }}>{inputErrors.username}</p></div>}
-            </div>
-            <div className="mb-4">
-              <label className="block mb-2 text-md" htmlFor="email">البريد الإلكتروني</label>
-              <input type="email" name="email" id="email" value={inputValues.email} onChange={handleInputChange} className="w-full p-2 bg-white rounded-md border text-md" placeholder="البريد الإلكتروني.." />
-              {inputErrors.email && <div className='flex items-center justify-center'><p style={{ color: "red" }}>{inputErrors.email}</p></div>}
-            </div>
-            <div className="mb-4">
-              <label className="block mb-2 text-md" htmlFor="password">كلمة المرور</label>
-              <input type="password" name="password" id="password" value={inputValues.password} onChange={handleInputChange} className="w-full p-2 bg-white rounded-md border text-md" placeholder="كلمة المرور.." />
-              {inputErrors.password && <div className='flex items-center justify-center'><p style={{ color: "red" }}>{inputErrors.password}</p></div>}
-            </div>
-            <div className="mb-4">
-              <label className="block mb-2 text-md" htmlFor="validate_password">أكد كلمة المرور</label>
-              <input type="password" name="validate_password" id="validate_password" value={inputValues.validate_password} onChange={handleInputChange} className="w-full p-2 bg-white rounded-md border text-md" placeholder="كلمة المرور.." />
-              {inputErrors.validate_password && <div className='flex items-center justify-center'><p style={{ color: "red" }}>{inputErrors.validate_password}</p></div>}
-            </div>
-            {passwordError && <div className='flex items-center justify-center'><p style={{ color: "red", paddingBottom: '10px' }}>{passwordError}</p></div>}
-            <div className=' w-full flex items-center justify-center'>
-              {apiError && <div className='flex items-center justify-center'><p style={{ color: "red", paddingBottom: '10px' }}>{apiError}</p></div>}
-            </div>
+            <InputField
+              label="البريد الالكتروني"
+              type="username"
+              name="username"
+              id="username"
+              value={inputValues.username}
+              onChange={handleInputChange}
+              placeholder="اسم المستخدم.."
+              error={inputErrors.username}
+            />
+            <InputField
+              label="البريد الالكتروني"
+              type="email"
+              name="email"
+              id="email"
+              value={inputValues.email}
+              onChange={handleInputChange}
+              placeholder="اسم المستخدم.."
+              error={inputErrors.email}
+            />
+            <InputField
+              label="البريد الالكتروني"
+              type="password"
+              name="password"
+              id="password"
+              value={inputValues.password}
+              onChange={handleInputChange}
+              placeholder="اسم المستخدم.."
+              error={inputErrors.password}
+            />
+            <InputField
+              label="البريد الالكتروني"
+              type="password"
+              name="validate_password"
+              id="validate_password"
+              value={inputValues.validate_password}
+              onChange={handleInputChange}
+              placeholder="اسم المستخدم.."
+              error={inputErrors.validate_password}
+            />
+         
+            <ErrorMsg message={passwordError}/>
+            <ErrorMsg message={apiError}/>
 
             <div className="flex gap-4">
-              <button type="submit" className="flex justify-center items-center gap-2 w-full bg-primary text-white p-2 rounded-md">
-              {isSubmitting && <Loader/>}
-              {isSubmitting ? "جاري التسجيل.." : "تسجيل" }  
-              </button>
+              <SubmitButton isSubmitting={isSubmitting} title='التسجيل'/>
               <a href='/login' className="text-primary underline p-2 text-md rounded-md">ليك حساب؟</a>
             </div>
           </form>

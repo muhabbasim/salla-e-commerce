@@ -1,14 +1,11 @@
 import CatalogFilter from "../components/CatalogFilter"
-import Loader from "../components/Loader"
 import ProductCard from "../components/product_card/ProductCard"
 import Slider from "../components/Slider"
-import { useShoppingCart } from "../context/CartContext"
 import { useEffect, useState } from "react"
 import _ from 'lodash';
 import useProductLoader from "../utils/useProductLoader"
 import SkeletonProductCard from "@/components/skeleton/SkeletonProductCard"
 import SkeletonSlider from "@/components/skeleton/SkeletonSlider"
-import { toast } from "sonner"
 import EndOFLoader from "@/components/EndOFLoader"
 
 

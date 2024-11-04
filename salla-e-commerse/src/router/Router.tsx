@@ -1,5 +1,7 @@
 import { lazy } from 'react'
 import Loadable from '../components/loadable/Loadable';
+import NotFoundPage from '@/pages/Notfound';
+import BlankLayout from '@/layouts/BlankLayout';
 
 const AuthLayout = Loadable(lazy(() => import("../layouts/AuthLayout")));
 const MainLayout = Loadable(lazy(() => import("../layouts/MainLayout")));
@@ -11,6 +13,7 @@ const Register = Loadable(lazy(() => import("../pages/Register")));
 
 
 const Router = [
+
   {
     path: '/',
     element: <MainLayout/>,
@@ -26,8 +29,17 @@ const Router = [
     children: [
       { path: '/register', exact: true, element: <Register/> },
       { path: '/login', exact: true, element: <Login/> },
+      { path: '*', element: <NotFoundPage/>},
     ]
-  }
+  },
+  {
+    path: '/',
+    element: <BlankLayout/>,
+    children: [
+      { path: '*', element: <NotFoundPage/>},
+    ]
+  },
+ 
 ]
 
 export default Router;
