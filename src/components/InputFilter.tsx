@@ -1,6 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import api from '../context/apiRequest';
 
 interface InputFilterProps {
   onSearchChange: (value: string) => void;
