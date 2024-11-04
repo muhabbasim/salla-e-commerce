@@ -4,7 +4,7 @@ import CardPrice from './CardPrice';
 import CardImage from './CartImage';
 import FunctionButton from '../buttons/FunctionButton';
 import { toast } from 'sonner';
-import { useShoppingCart } from '@/context/CartContext';
+import { useShoppingCart } from '../../context/CartContext';
 
 export interface ProductCardProps {
   product: {

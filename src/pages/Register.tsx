@@ -1,13 +1,13 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { validate, ValidationError, ValidationRules } from '../utils/inputValidation';
 import { AxiosError } from 'axios';
-import api from '@/context/apiRequest';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import InputField from '@/components/InputField';
-import Title from '@/components/Title';
-import ErrorMsg from '@/components/ErrorMsg';
-import SubmitButton from '@/components/buttons/LoadingButton';
+import api from '../context/apiRequest';
+import Title from '../components/Title';
+import InputField from '../components/InputField';
+import ErrorMsg from '../components/ErrorMsg';
+import SubmitButton from '../components/buttons/LoadingButton';
 
 const Register: React.FC = () => {
   

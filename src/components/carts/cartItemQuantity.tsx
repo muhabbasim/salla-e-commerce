@@ -1,6 +1,5 @@
-import { useShoppingCart } from "@/context/CartContext";
-import { useState } from "react";
 import { toast } from "sonner";
+import { useShoppingCart } from "../../context/CartContext";
 
 interface cartItemQuantityProps {
   productId: number;

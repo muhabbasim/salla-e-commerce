@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Cart from '@/components/carts/Cart';
-import { useShoppingCart } from '@/context/CartContext';
-import { AuthContext } from '@/context/authContext';
+import Cart from '../components/carts/Cart';
+import { useShoppingCart } from '../context/CartContext';
+import { AuthContext } from '../context/authContext';
 
 const CartPage: React.FC = () => {
 

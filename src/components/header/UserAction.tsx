@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from "@/context/authContext";
+import { AuthContext } from '../../context/authContext';
 
 export const UserActions: React.FC = () => {
   const { currentUser } = useContext(AuthContext);

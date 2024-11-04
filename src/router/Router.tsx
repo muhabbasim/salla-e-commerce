@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 import Loadable from '../components/loadable/Loadable';
-import NotFoundPage from '@/pages/Notfound';
-import BlankLayout from '@/layouts/BlankLayout';
+import BlankLayout from '../layouts/BlankLayout';
+import NotFoundPage from '../pages/Notfound';
 
 const AuthLayout = Loadable(lazy(() => import("../layouts/AuthLayout")));
 const MainLayout = Loadable(lazy(() => import("../layouts/MainLayout")));
@@ -29,7 +29,6 @@ const Router = [
     children: [
       { path: '/register', exact: true, element: <Register/> },
       { path: '/login', exact: true, element: <Login/> },
-      { path: '*', element: <NotFoundPage/>},
     ]
   },
   {

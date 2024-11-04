@@ -5,8 +5,8 @@ import { useShoppingCart } from '../context/CartContext';
 import { useQuery } from '@tanstack/react-query';
 import api from '../context/apiRequest';
 import { ProductProps } from './Home';
-import SkeletonProductDetails from '@/components/skeleton/SkeletonProductDetails';
 import { toast } from 'sonner';
+import SkeletonProductDetails from '../components/skeleton/SkeletonProductDetails';
 
 const Product: React.FC = () => {
 

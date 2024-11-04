@@ -1,5 +1,5 @@
 import React from 'react';
-import { useShoppingCart } from "@/context/CartContext";
+import { useShoppingCart } from '../../context/CartContext';
 
 export const CartIcon: React.FC = () => {
   const { cartQuantity } = useShoppingCart();

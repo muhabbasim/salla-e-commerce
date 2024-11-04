@@ -1,6 +1,6 @@
 import React from 'react';
 import ErrorImg from '@/assets/images/errorimg.svg'; // Update with the correct path
-import ClickButton from '@/components/buttons/ClickButton';
+import ClickButton from '../components/buttons/ClickButton';
 
 const NotFoundPage: React.FC = () => {
   const handleRoutes = () => {
@@ -8,8 +8,8 @@ const NotFoundPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-center">
-      <div className="w-full max-w-md px-4">
+    <div style={{ height: '100vh'}} className="flex flex-col items-center justify-center text-center">
+      <div className="w-full h-screen max-w-md px-4">
         <div className="flex items-center justify-center mb-6">
           <img src={ErrorImg} alt="404" className="max-w-full h-auto" loading="lazy" />
         </div>
@@ -18,7 +18,6 @@ const NotFoundPage: React.FC = () => {
           الصفحة التي تبحث عنها غير موجودة
         </h4>
         <ClickButton buttonFunc={handleRoutes} title='العودة إلى الرئيسية'/>
-     
       </div>
     </div>
   );

@@ -3,11 +3,12 @@ import { FormEvent } from 'react';
 import { validate, ValidationError, ValidationRules } from '../utils/inputValidation';
 import { AuthContext } from '../context/authContext';
 import { AxiosError } from 'axios';
-import SubmitButton from '@/components/buttons/LoadingButton';
-import ForPasaButton from '@/components/buttons/ForPasaButton';
-import ErrorMsg from '@/components/ErrorMsg';
-import InputField from '@/components/InputField';
-import Title from '@/components/Title';
+import Title from '../components/Title';
+import InputField from '../components/InputField';
+import ErrorMsg from '../components/ErrorMsg';
+import SubmitButton from '../components/buttons/LoadingButton';
+import ForPasaButton from '../components/buttons/ForPasaButton';
+
 
 const Login: React.FC = () => {
 

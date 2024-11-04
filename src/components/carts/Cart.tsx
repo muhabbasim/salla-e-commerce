@@ -1,12 +1,12 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import api from '@/context/apiRequest';
-import { ProductProps } from '@/pages/Home';
 import Title from '../Title';
 import CartItem from './CartItem';
 import SkeletonCartItem from '../skeleton/SkeletonCartItem';
 import CartTotal from './CartTotal';
 import ClickButton from '../buttons/ClickButton';
+import api from '../../context/apiRequest';
+import { ProductProps } from '../../pages/Home';
 
 
 interface CartProduct {

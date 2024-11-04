@@ -4,9 +4,10 @@ import Slider from "../components/Slider"
 import { useEffect, useState } from "react"
 import _ from 'lodash';
 import useProductLoader from "../utils/useProductLoader"
-import SkeletonProductCard from "@/components/skeleton/SkeletonProductCard"
-import SkeletonSlider from "@/components/skeleton/SkeletonSlider"
-import EndOFLoader from "@/components/EndOFLoader"
+import SkeletonSlider from "../components/skeleton/SkeletonSlider";
+import SkeletonProductCard from "../components/skeleton/SkeletonProductCard";
+import EndOFLoader from "../components/EndOFLoader";
+
 
 
 export interface ProductProps {
