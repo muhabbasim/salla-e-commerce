@@ -3,10 +3,10 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import ReactQueryProvider from './providers/ReactQeuryProvider';
-import { AuthContextProvider } from './context/authContext';
 import { Suspense } from 'react';
 import Spinner from './components/spinner/Spinner';
 import { Toaster } from 'sonner'
+import { AuthContextProvider } from './context/authContext';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
