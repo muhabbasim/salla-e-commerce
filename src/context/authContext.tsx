@@ -10,7 +10,6 @@ interface Props {
 
 interface AuthContextProps {
   login: (formData: any) => void;
-  register: (formData: any) => void;
   logout: () => void;
   currentUser: boolean;
   loginError: string;
@@ -19,7 +18,6 @@ interface AuthContextProps {
 
 const defaultContext: AuthContextProps = {
   login: () => {},
-  register: () => {},
   logout: () => {},
   currentUser: false,
   loginError: "",
@@ -76,22 +74,6 @@ export const AuthContextProvider = ({ children }: Props ) => {
       }
     }
   }
-  // get the login axios from the login page
-  const register = async (formData: any) => {
-
-    try {
-      
-      const res = await axios.post('https://limitless-lake-55070.herokuapp.com/user/signup', formData)
-      console.log(res)
-      setToken(res.data.token)
-      setCurrentUser(true)
-      route('/')
-    } catch (error) {
-      if (error instanceof AxiosError) {
-        console.log(error)
-      }
-    }
-  }
 
   const logout = async () => {
     try {
@@ -111,7 +93,7 @@ export const AuthContextProvider = ({ children }: Props ) => {
   }, [currentUser, token])
 
   return (
-    <AuthContext.Provider value={{ login, loginError, logout, register, currentUser }}>
+    <AuthContext.Provider value={{ login, loginError, logout, currentUser }}>
       {children}
     </AuthContext.Provider>
   )

@@ -1,28 +1,44 @@
-## Salla Front-End React-TypeScript Challenge
+# Project Name
 
-### Overview
-This is an assignment project for talented Senior Front-End developers who are willing to join Salla development team.
-Provide your solution **within 7 calendar days**. 
-If you need any clarification you can send an email with your questions.
-After completing the tasks, share your results in a GitHub repo, deploy your project in Netlify, Vercel or any other deployment platform.
+This project is built with **React** and **Vite**, which provides a fast and efficient development experience. 
 
-**The Project must be in ReactJS (you can use NextJS if you want), or Vue 3 & using TypeScript is mandatory.**
+## Why Vite for React?
 
-### About the Project
-Developing an E-Commerce store with the basic functionality of browsing & filtering catalog, user login, adding, deleting & updating user cart.
-* You will find the following pages: home, product details, login, cart in a plain HTML & CSS, feel free to add any extra components if needed.
-* Create the complete functionality of a store, You can use [this](https://limitless-lake-55070.herokuapp.com/swagger-ui.html) or [this](https://fakestoreapi.com/) API to get fetch data.
-* Catalog in front page should be loaded via infinite loading
-* Visitor can add items to cart from home page or product details and edit cart items, and when logged in he should be able to get his saved cart items.
-* Smooth transitions, animations, responsive and attention to details are A+ and appreciated.
+Vite is well-suited for React projects because:
+- **Blazing Fast Dev Server**: Vite starts the development server almost instantly, making hot module replacement (HMR) extremely fast, which is ideal for React's component-based structure.
+- **Efficient Build Process**: Vite leverages Rollup under the hood for production builds, optimizing code splitting and minimizing bundle sizes.
+- **Modern JavaScript Support**: It uses native ES modules in development, enabling faster browser loading without unnecessary bundling.
+- **Flexible and Configurable**: Vite is easy to configure for a wide variety of projects and supports various plugins for extending functionality.
 
-### Review Notes:
-In this project, You will be reviewed on the following areas:
-* Understanding encapsulation approach.
-* Robust understanding of state management.
-* API integration and data manipulation CRUD.
-* Unit test.
-* Clean & smart code.
-* SEO Optimization using SSR rendering.
-* Data validation.
-* Performance Optimization.
+## Live Website
+
+To view the website, visit [Live Site](https://salla-e-commerce.vercel.app/).
+
+## Getting Started
+
+To view or modify the code in your editor, follow these steps:
+
+1. Clone the repository:
+  git clone https://github.com/muhabbasim/salla-e-commerce.git
+
+2. Navigate to the project directory
+3. npm install
+4. npm run dev
+
+5. To view the site, open your browser and go to:
+  http://localhost:....
+
+
+## Running Tests
+
+This project uses Vitest as the testing framework.
+To run the tests in the terminal:
+  - npm run test 
+
+To run tests with the UI for an interactive testing experience:
+  - npm run test:ui
+
+## Vitest is chosen for this project because:
+- Fast Execution: Built on Vite, making it faster to execute tests in a development environment.
+- Simple Configuration: Vitest integrates seamlessly with Vite making it efficient and easy to configure.
+- UI Testing: Vitest's interactive UI mode provides a friendly way to visualize and run tests.

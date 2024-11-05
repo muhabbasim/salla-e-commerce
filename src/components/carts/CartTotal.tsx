@@ -1,7 +1,7 @@
 import CardPrice from "../product_card/CardPrice";
 
 export interface CartTotalProps {
-  totalPrice: number;
+  totalPrice?: number;
   title?: string;
 }
 

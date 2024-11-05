@@ -1,5 +1,7 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import "partials/layout";
-@import "components/body";
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
+// Custom partials and components
+@use "partials/layout";
+@use "components/body";

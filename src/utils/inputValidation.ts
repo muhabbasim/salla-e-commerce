@@ -21,17 +21,17 @@ export const validate = (
 
     // Required field validation
     if (rules.required && !value) {
-      errors[key] = `${key.replace('_', ' ')} is required.`;
+      errors[key] = `${key.replace('_', ' ')} is required`;
     }
 
     // Minimum length validation
     if (rules.minLength && value.length < rules.minLength) {
-      errors[key] = `${key.replace('_', ' ')} must be at least ${rules.minLength} characters.`;
+      errors[key] = `${key.replace('_', ' ')} must be at least ${rules.minLength} characters`;
     }
 
     // Maximum length validation
     if (rules.maxLength && value.length > rules.maxLength) {
-      errors[key] = `${key.replace('_', ' ')} must not exceed ${rules.maxLength} characters.`;
+      errors[key] = `${key.replace('_', ' ')} must not exceed ${rules.maxLength} characters`;
     }
   }
 

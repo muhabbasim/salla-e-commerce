@@ -2,7 +2,7 @@
 // SkeletonCartItem.js
 export default function SkeletonCartItem() {
   return (
-    <div className="flex justify-between">
+    <div className="flex items-start sm:items-center flex-col sm:flex-row justify-between gap-4 w-full p-4 rounded-md transition-all hover:bg-grayer-100">
       <div className="flex  w-full gap-4 items-center p-4 rounded-lg animate-pulse space-x-4">
         <div className="bg-gray-300 h-10 w-10 rounded-md"></div>
         

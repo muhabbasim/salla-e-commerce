@@ -36,17 +36,6 @@ export default function Home() {
   // to make pages of the products then Simulate API loading dela
   // Chunk products into pages based on the latest data
   const productChunks = data ? _.chunk(filteredData, pageSize) : [];
-  // Reset displayed products and page state when data or selectedCategory changes
-  useEffect(() => {
-    setCurrentPage(0);
-    const filteredResults = data
-      ? data.filter((product) =>
-          product.title.toLowerCase().includes(search.toLowerCase())
-        )
-      : [];
-    const initialChunk = _.chunk(filteredResults, pageSize)[0] || [];
-    setDisplayedProducts(initialChunk); 
-  }, [ search, data, selectedCategory]); 
 
   const loadMoreProducts = () => {
     
@@ -66,19 +55,12 @@ export default function Home() {
     }, 3000);
   };
 
-
   // Infinite scroll handler
   const handleScroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !loading) {
       loadMoreProducts();
     }
   };
-  
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [loading, currentPage, productChunks.length]);
-
 
   const onSearchChange = (el:string) => {
     setSearch(el);
@@ -92,8 +74,25 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoadingSlider(false);
-    }, 1000);
+    }, 100);
   }, []) 
+
+  // Reset displayed products and page state when data or selectedCategory changes
+  useEffect(() => {
+    setCurrentPage(0);
+    const filteredResults = data
+      ? data.filter((product) =>
+          product.title.toLowerCase().includes(search.toLowerCase())
+        )
+      : [];
+    const initialChunk = _.chunk(filteredResults, pageSize)[0] || [];
+    setDisplayedProducts(initialChunk); 
+  }, [ search, data, selectedCategory]); 
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loading, currentPage, productChunks.length]);
 
 
   return (

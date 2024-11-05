@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SallaChallenges/react-typescript-challenge"
+    "url": "https://github.com/muhabbasim/salla-e-commerce"
   },
   "theme_uri": "https://salla.com",
   "author_uri": "https://salla.com",
@@ -27,7 +27,7 @@
     "@babel/preset-env": "^7.16.5",
     "@tailwindcss/forms": "^0.5.3",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.0.1",
+    "@testing-library/react": "^14.2.0",
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.13",
     "@types/react-router-dom": "^5.3.3",
@@ -41,6 +41,7 @@
     "css-minimizer-webpack-plugin": "^4.2.2",
     "glob": "^8.0.3",
     "jest": "^29.7.0",
+    "jsdom": "^24.0.0",
     "mini-css-extract-plugin": "^2.4.3",
     "postcss": "^8.4.47",
     "postcss-import": "^14.1.0",
@@ -68,6 +69,7 @@
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "jest-environment-jsdom": "^29.7.0",
     "lodash": "^4.17.21",
     "lucide-react": "^0.454.0",
     "react": "^18.3.1",

@@ -1,10 +1,14 @@
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer'
 import Header from '../components/Header';
+import { useContext } from 'react';
+import { AuthContext } from '@/context/authContext';
 
 
 export default function AuthLayout() {
   
+  const { currentUser } = useContext(AuthContext)
+
   return (
     <div className="w-full min-h-screen flex flex-col bg-gray-50">
       
@@ -15,7 +19,7 @@ export default function AuthLayout() {
       </header>
       
       <main className="flex-grow w-full">
-        <Outlet />
+        {currentUser ? <Navigate to="/" /> : <Outlet />}
       </main>
 
       <footer className="w-full">
