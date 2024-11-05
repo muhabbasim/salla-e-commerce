@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import CartItemQuantity from '../src/components/carts/cartItemQuantity';
+import CartItemQuantity from '../../src/components/carts/cartItemQuantity';
 
 // Define the mock functions for the useShoppingCart hook
 const increaseCartQuantity = vi.fn();

@@ -1,5 +1,5 @@
-import { toast } from "sonner";
 import { useShoppingCart } from "../../context/CartContext";
+import { toast } from "sonner";
 
 interface cartItemQuantityProps {
   productId: number;

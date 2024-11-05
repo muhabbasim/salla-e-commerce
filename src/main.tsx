@@ -10,15 +10,15 @@ import { AuthContextProvider } from './context/authContext'
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter basename='/'>
-  <AuthContextProvider>
-    <ReactQueryProvider>
-      <CartProvider>
-        <Suspense fallback={<Spinner/>}>
-          <Toaster/>
-          <App />
-        </Suspense>
-      </CartProvider>
-    </ReactQueryProvider>
-  </AuthContextProvider>
-</BrowserRouter>
+    <AuthContextProvider>
+      <ReactQueryProvider>
+        <CartProvider>
+          <Suspense fallback={<Spinner/>}>
+            <Toaster/>
+            <App />
+          </Suspense>
+        </CartProvider>
+      </ReactQueryProvider>
+    </AuthContextProvider>
+  </BrowserRouter>
 )
