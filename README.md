@@ -22,6 +22,8 @@ To view or modify the code in your editor, follow these steps:
   git clone https://github.com/muhabbasim/salla-e-commerce.git
 
 2. Navigate to the project directory
+  cd salla-e-commerce
+  
 3. npm install
 4. npm run dev
 
