@@ -26,7 +26,7 @@ const defaultContext: AuthContextProps = {
 
 export const AuthContext = createContext<AuthContextProps>(defaultContext);
 
-const AuthContextProvider = ({ children }: Props ) => {
+export const AuthContextProvider = ({ children }: Props ) => {
   
   const route = useNavigate();
   const [loginError, setLoginError] = useState('')
@@ -98,5 +98,3 @@ const AuthContextProvider = ({ children }: Props ) => {
     </AuthContext.Provider>
   )
 }
-
-export default AuthContextProvider

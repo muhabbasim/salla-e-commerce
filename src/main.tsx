@@ -6,7 +6,7 @@ import ReactQueryProvider from './providers/ReactQeuryProvider'
 import { CartProvider } from './context/CartContext'
 import { Toaster } from 'sonner'
 import Spinner from './components/spinner/Spinner'
-import AuthContextProvider from './context/authContext'
+import { AuthContextProvider } from '@/context/authContext'
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter basename='/'>
