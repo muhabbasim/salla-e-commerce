@@ -1,6 +1,6 @@
 
 import { render, screen } from '@testing-library/react'
-import CartTotal from '../../src/components/carts/CartTotal'
+import CartTotal from '../src/components/carts/CartTotal'
 
 
 describe('Total Price', () => {
