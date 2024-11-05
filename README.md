@@ -19,7 +19,7 @@ To view the website, visit [Live Site](https://salla-e-commerce.vercel.app/).
 To view or modify the code in your editor, follow these steps:
 
 1. Clone the repository:
-  git clone https://github.com/muhabbasim/salla-e-commerce.git
+  git clone https://github.com/SallaChallenges/react-typescript-challenge-muhabbasim-1586.git
 
 2. Navigate to the project directory
   cd salla-e-commerce
