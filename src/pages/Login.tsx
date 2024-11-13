@@ -6,8 +6,9 @@ import { AxiosError } from 'axios';
 import Title from '../components/Title';
 import InputField from '../components/InputField';
 import ErrorMsg from '../components/ErrorMsg';
-import SubmitButton from '../components/buttons/LoadingButton';
-import LinkButton from '../components/buttons/LinkButton';
+import Lable from '@/components/Label';
+import ButtonComponent from '@/components/buttons/ButtonComponent';
+import LinkComponent from '../components/buttons/LinkComponent';
 
 
 const Login: React.FC = () => {
@@ -38,7 +39,7 @@ const Login: React.FC = () => {
 
   // validation roles
   const validationRules: { [key: string]: ValidationRules } = {
-    email: { required: true, minLength: 3 },
+    email: { required: true, minLength: 5 },
     password: { required: true },
   };
 
@@ -75,36 +76,45 @@ const Login: React.FC = () => {
       <div className="container">
         <div className="p-2 sm:p-4 bg-white rounded-lg shadow-4xl sm:max-w-[700px] mx-auto">
           <div className="flex flex-col text-center items-center justify-center mb-6">
-            <Title title='تسجيل الدخول' className='text-lg'/>
-            <Title title='قم بتسجيل الدخول لمتابعة التسوق' className='text-md text-gray-500'/>
+            <Title title="Login" className='text-lg'/>
+            <Title title="Login to continu shpping" className='text-md text-gray-500'/>
   
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col w-full">
+            <Lable title='Email' className="block mb-2 text-md"/>
             <InputField
-              label="البريد الالكتروني"
               type="email"
               name="email"
               id="email"
+              className='w-full p-2 bg-white rounded-md border text-md'
               value={inputValues.email}
               onChange={handleInputChange}
-              placeholder="البريد الالكتروني"
-              error={errors.email}
+              placeholder="email"
             />
+            <ErrorMsg message={errors.email} className='w-full flex p-2 items-center justify-center'/>
 
+
+            <Lable title='Password' className="block mb-2 text-md"/>
             <InputField
-              label="كلمة المرور"
               type="password"
               name="password"
               id="password"
+              className='w-full p-2 bg-white rounded-md border text-md'
               value={inputValues.password}
               onChange={handleInputChange}
-              placeholder="كلمة المرور.."
-              error={errors.password}
+              placeholder="assword"
             />
-            <ErrorMsg message={loginError}/>
+            <ErrorMsg message={errors.password} className='w-full flex p-2 items-center justify-center'/>
+
+            <ErrorMsg message={loginError}  className='w-full flex p-2 items-center justify-center'/>
             <div className="flex gap-4">
-              <SubmitButton isSubmitting={isSubmitting} title='الدخول'/>
-              <LinkButton title='ليس لديك حساب؟' href='/register'/>
+              <ButtonComponent 
+                type="submit" 
+                className="flex justify-center items-center gap-2 w-full bg-primary text-white flex-1 p-2 rounded-md" 
+                isSubmitting={isSubmitting} 
+                title="Login"
+              />
+              <LinkComponent title="don't have an account" href='/register'/>
             </div>
           </form>
         </div>

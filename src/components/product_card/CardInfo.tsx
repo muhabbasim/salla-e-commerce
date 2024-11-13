@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Translatable from '../translatable_text/Translatable';
 
 export interface CardInfoProps {
   title?: string;
@@ -15,7 +16,7 @@ const CardInfo: React.FC<CardInfoProps> = ({ title, category }) => {
         <a href="#" className="block items-center justify-center w-full text-primary text-center">
           <h2 className="text-sm">{title}</h2>
         </a>
-        <small className="text-xs text-gray-500">الاصدار الاحدث و الافضل حتى اليوم</small>
+        <small className="text-xs text-gray-500"><Translatable>The latest and best version to date</Translatable></small>
       </div>
 
       {/* product category */}

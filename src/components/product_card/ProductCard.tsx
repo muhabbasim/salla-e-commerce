@@ -2,9 +2,9 @@ import React from 'react';
 import CardInfo from './CardInfo';
 import CardPrice from './CardPrice';
 import CardImage from './CartImage';
-import FunctionButton from '../buttons/FunctionButton';
 import { toast } from 'sonner';
 import { useShoppingCart } from '../../context/CartContext';
+import ButtonComponent from '../buttons/ButtonComponent';
 
 export interface ProductCardProps {
   product: {
@@ -24,7 +24,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   const onAddToCart = (id: number) => {
     increaseCartQuantity(id);
-    toast.success('تم إضافة المنتج إلى السلة')
+    toast.success("Item added to cart")
   };
 
   return(
@@ -37,7 +37,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <CardPrice price={product.price} className='text-md m-4'/>
       </div>
 
-      <FunctionButton title="إضافة للسلة" funcProp={product.id} buttonFunc={onAddToCart}/>
+      <ButtonComponent 
+        className="w-full bg-primary text-white p-2 text-md rounded-md"
+        title="Add to cart" 
+        onClick={() => onAddToCart(product.id)}
+      />
     </div>
   )
 }

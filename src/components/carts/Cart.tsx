@@ -4,9 +4,9 @@ import Title from '../Title';
 import CartItem from './CartItem';
 import SkeletonCartItem from '../skeleton/SkeletonCartItem';
 import CartTotal from './CartTotal';
-import ClickButton from '../buttons/ClickButton';
 import api from '../../context/apiRequest';
 import { ProductProps } from '../../pages/Home';
+import ButtonComponent from '../buttons/ButtonComponent';
 
 
 interface CartProduct {
@@ -40,7 +40,7 @@ const Cart: React.FC<CartProps> = ({ cartProducts, onCheckout }) => {
     <main className="w-full main flex-auto">
       <div className="container">
         <div className="p-4 bg-white rounded-lg shadow-4xl">
-          <Title title='سلة المشتريات' className="text-lg  mb-6"/>
+          <Title title="Cart" className="text-lg  mb-6"/>
 
           <ul className="flex flex-col">
             {cartProducts?.map((product) => {
@@ -62,8 +62,12 @@ const Cart: React.FC<CartProps> = ({ cartProducts, onCheckout }) => {
             })}
           </ul>
 
-          <CartTotal totalPrice={total} title='اجمالي السلة'/>
-          <ClickButton title="اتمام عملية الدفع" buttonFunc={onCheckout}/>
+          <CartTotal totalPrice={total} title="Total"/>
+          <ButtonComponent 
+            className="w-full h-[42px] bg-primary text-white p-2 rounded-md"
+            title="Proceed to payment" 
+            onClick={onCheckout}
+          />
         </div>
       </div>
     </main>

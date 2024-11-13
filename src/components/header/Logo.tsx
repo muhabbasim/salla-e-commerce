@@ -1,4 +1,5 @@
 import React from 'react';
+import Translatable from '../translatable_text/Translatable';
 
 interface Props {
   logoSrc: string;
@@ -13,8 +14,8 @@ export const CenterLogo: React.FC<Props> = ({ logoSrc, storeTitle, tagline }) =>
         <img src={logoSrc} alt="Logo" loading="lazy" className="w-full h-full object-cover rounded-full" />
       </a>
       <div className="flex flex-col items-center text-center">
-        <h1 className="text-xl">{storeTitle}</h1>
-        <small className="text-gray-400">{tagline}</small>
+        <h1 className="text-xl"><Translatable>{storeTitle}</Translatable></h1>
+        <small className="text-gray-400"><Translatable>{tagline}</Translatable></small>
       </div>
     </div>
   </div>
@@ -26,8 +27,8 @@ export const NavLogo: React.FC<Props> = ({ logoSrc, storeTitle, tagline }) => (
       <img src={logoSrc} alt="Logo" className="w-full h-full object-cover rounded-full" />
     </a>
     <div className="flex flex-col">
-      <h1 className="text-xl">{storeTitle}</h1>
-      <small className="text-gray-400">{tagline}</small>
+      <h1 className="text-xl"><Translatable>{storeTitle}</Translatable></h1>
+      <small className="text-gray-400"><Translatable>{tagline}</Translatable></small>
     </div>
   </div>
 );

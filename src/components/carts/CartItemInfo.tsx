@@ -14,9 +14,9 @@ interface CartItemInfoProps {
 const CartItemInfo: React.FC<CartItemInfoProps> = ({ product }) => {
   
   return (
-    <a href={`/product/${product.id}`} className="flex items-start justify-center gap-2 flex-1">
+    <a href={`/product/${product.id}`} className="flex gap-2 flex-1">
       <img className="rounded-md w-[35px] object-cover" src={product.image} alt={product.title} />
-      <div className="flex flex-col flex-1 gap-1">
+      <div className="flex flex-col gap-1">
         <h4>{product.title}</h4>
         <div className="flex items-center justify-start gap-2">
           <b className="ltr">x {product.quantity}</b>

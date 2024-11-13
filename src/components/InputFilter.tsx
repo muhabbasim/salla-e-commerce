@@ -11,7 +11,7 @@ const InputFilter: React.FC<InputFilterProps> = ({ onSearchChange, search }) => 
     <input
       type="text"
       id="product_query"
-      placeholder="ادخل اسم المنتج..."
+      placeholder="Filter"
       onChange={(e) => onSearchChange(e.target.value)}
       value={search}
       className="w-full p-2 bg-white rounded-md border text-md"

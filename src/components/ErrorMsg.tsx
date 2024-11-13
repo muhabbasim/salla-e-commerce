@@ -1,10 +1,11 @@
 interface MessageProps {
-  message?: string;
+  message: string;
+  className?: string;
 }
-export default function ErrorMsg({ message }: MessageProps) {
+export default function ErrorMsg({ message, className }: MessageProps) {
  
   return (
-    <div className=' w-full flex p-2 items-center justify-center'>
+    <div className={className}>
       {message && <p style={{ color: "red", paddingBottom: '10px' }}>{message}</p>}
     </div>
   )

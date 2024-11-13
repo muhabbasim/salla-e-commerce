@@ -27,7 +27,7 @@ const Product: React.FC = () => {
 
     addCartQuantity(productId!, quantity)
     console.log(`Added ${quantity} items to the cart.`);
-    toast.success(`تم إضافة المنتج إلى السلة`)
+    toast.success("Item added to cart")
   };
 
   return (

@@ -9,7 +9,6 @@ import SkeletonProductCard from "../components/skeleton/SkeletonProductCard";
 import EndOFLoader from "../components/EndOFLoader";
 
 
-
 export interface ProductProps {
   id: number;
   title: string;

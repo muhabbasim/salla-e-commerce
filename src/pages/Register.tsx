@@ -7,8 +7,9 @@ import api from '../context/apiRequest';
 import Title from '../components/Title';
 import InputField from '../components/InputField';
 import ErrorMsg from '../components/ErrorMsg';
-import SubmitButton from '../components/buttons/LoadingButton';
-import LinkButton from '../components/buttons/LinkButton';
+import Lable from '@/components/Label';
+import ButtonComponent from '@/components/buttons/ButtonComponent';
+import LinkComponent from '@/components/buttons/LinkComponent';
 
 const Register: React.FC = () => {
   
@@ -61,7 +62,7 @@ const Register: React.FC = () => {
       
       const { password, validate_password } = inputValues
       if (validate_password !== password) {
-        setPasswordError('كلمة المرور غير متطابقة')
+        setPasswordError("Passwords does not match");
         return;
       }
       
@@ -99,57 +100,70 @@ const Register: React.FC = () => {
       <div className="container">
         <div className="p-2 sm:p-4 bg-white rounded-lg shadow-4xl sm:max-w-[700px] mx-auto">
           <div className="flex flex-col text-center items-center justify-center mb-6">
-            <Title title='إنشاء حساب جديد' className='text-lg'/>
-            <Title title="قم بإنشاء حساب جديد للتمتع بالتسوق" className='text-md text-gray-500'/>
+            <Title title="Register" className='text-lg'/>
+            <Title title="Register to continu shpping" className='text-md text-gray-500'/>
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col w-full">
+          <Lable title='Username' className="block mb-2 text-md"/>
             <InputField
-              label="اسم المستخدم"
               type="username"
               name="username"
               id="username"
+              className='w-full p-2 bg-white rounded-md border text-md'
               value={inputValues.username}
               onChange={handleInputChange}
-              placeholder="اسم المستخدم"
-              error={inputErrors.username}
+              placeholder="username"
             />
+            <ErrorMsg message={inputErrors.username} className='w-full flex p-1 items-center justify-center'/>
+            
+            <Lable title='Email' className="block mb-2 text-md"/>
             <InputField
-              label="البريد الالكتروني"
               type="email"
               name="email"
               id="email"
+              className='w-full p-2 bg-white rounded-md border text-md'
               value={inputValues.email}
               onChange={handleInputChange}
-              placeholder="البريد الالكتروني"
-              error={inputErrors.email}
+              placeholder="example@example.com"
             />
+            <ErrorMsg message={inputErrors.email} className='w-full flex p-1 items-center justify-center'/>
+
+            <Lable title='Password' className="block mb-2 text-md"/>
             <InputField
-              label="كلمة المرور"
               type="password"
               name="password"
               id="password"
+              className='w-full p-2 bg-white rounded-md border text-md'
               value={inputValues.password}
               onChange={handleInputChange}
-              placeholder="كلمة المرور"
-              error={inputErrors.password}
+              placeholder="****"
             />
+            <ErrorMsg message={inputErrors.password} className='w-full flex p-1 items-center justify-center'/>
+
+            <Lable title='Password confirmation' className="block mb-2 text-md"/>
             <InputField
-              label="تأكيد كلمة المرور"
               type="password"
               name="validate_password" 
               id="validate_password"
+              className='w-full p-2 bg-white rounded-md border text-md'
               value={inputValues.validate_password}
               onChange={handleInputChange}
-              placeholder="تأكيد كلمة المرور"
-              error={inputErrors.validate_password}
+              placeholder="****"
             />
+            <ErrorMsg message={inputErrors.validate_password} className='w-full flex p-1 items-center justify-center'/>
+
          
-            <ErrorMsg message={passwordError}/>
-            <ErrorMsg message={apiError}/>
+            <ErrorMsg message={passwordError}  className='w-full flex p-2 items-center justify-center'/>
+            <ErrorMsg message={apiError}  className='w-full flex p-2 items-center justify-center'/>
 
             <div className="flex gap-4">
-              <SubmitButton isSubmitting={isSubmitting} title='التسجيل'/>
-              <LinkButton title='لديك حساب؟' href='/login'/>
+              <ButtonComponent 
+                type="submit" 
+                className="flex justify-center items-center gap-2 w-full bg-primary text-white flex-1 p-2 rounded-md" 
+                isSubmitting={isSubmitting} 
+                title="Register"
+              />
+              <LinkComponent title="Already have an account?" href='/login'/>
             </div>
           </form>
         </div>

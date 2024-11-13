@@ -1,4 +1,5 @@
 import React from 'react';
+import Translatable from './translatable_text/Translatable';
 
 interface CatelogFilterProps {
   onCategoryChange: (category: string) => void;
@@ -8,13 +9,6 @@ interface CatelogFilterProps {
 
 const CatelogFilter: React.FC<CatelogFilterProps> = ({ onCategoryChange, selectedCategory, categories }) => {
 
-  const categoryTitles: any = {
-    "electronics": "إلكترونيات",
-    "jewelery": "مجوهرات",
-    "men's clothing": "ملابس رجالية",
-    "women's clothing": "ملابس نسائية"
-  };
-
   return (
 
     <select
@@ -23,12 +17,11 @@ const CatelogFilter: React.FC<CatelogFilterProps> = ({ onCategoryChange, selecte
       className="bg-white border rounded-md text-md px-2 py-1"
       value={selectedCategory}
     >
-      <option value="">جميع المنتجات</option>
+      <option value=""><Translatable>All products</Translatable></option>
       {categories?.map((el: {id: number, value: string}) => {
-        const catTitle = categoryTitles[el.value]; 
 
         return(
-          <option key={el.id} value={`category/${el.value}`}>{catTitle}</option>
+          <option key={el.id} value={`category/${el.value}`}><Translatable>{el.value}</Translatable></option>
         )
       })}
     </select>

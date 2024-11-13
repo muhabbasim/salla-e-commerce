@@ -2,6 +2,7 @@ import React from 'react';
 import { CenterLogo, NavLogo } from './header/Logo';
 import { LogOut, UserActions } from './header/UserAction';
 import { CartIcon } from './header/CartIcon';
+import Language from './language/Language';
 
 interface HeaderProps {
   position: 'center' | 'nav';
@@ -19,8 +20,8 @@ const Header: React.FC<HeaderProps> = ({ position }) =>  {
 
             <CenterLogo 
               logoSrc="https://cdn.salla.network/images/logo/logo-square.png" 
-              storeTitle="متجر التجربة الجميلة" 
-              tagline="متجرك لكل تجاربك وأفكارك الجميلة"
+              storeTitle="The Beautiful Experience Store" 
+              tagline="Your Store for All Your Beautiful Experiences and Ideas"
             />
 
           ) : (
@@ -28,10 +29,11 @@ const Header: React.FC<HeaderProps> = ({ position }) =>  {
             <div className="flex justify-between flex-col sm:flex-row gap-4 items-center">
               <NavLogo
                 logoSrc="https://cdn.salla.network/images/logo/logo-square.png" 
-                storeTitle="متجر التجربة الجميلة" 
-                tagline="متجرك لكل تجاربك وأفكارك الجميلة"
+                storeTitle="The Beautiful Experience Store" 
+                tagline="Your Store for All Your Beautiful Experiences and Ideas"
               />
               <div className="flex items-center gap-4">
+               <Language/>
                <UserActions/>
                <CartIcon/>
                <LogOut/>

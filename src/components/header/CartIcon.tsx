@@ -5,7 +5,7 @@ export const CartIcon: React.FC = () => {
   const { cartQuantity } = useShoppingCart();
 
   return (
-    <a href="/cart" className="w-[40px] h-[40px] rounded-full flex items-center justify-center bg-secondary-50 text-primary">
+    <a dir='rtl' href="/cart" className="w-[40px] h-[40px] rounded-full flex items-center justify-center bg-secondary-50 text-primary">
       <i className="sicon-shopping-bag"></i>
       {cartQuantity > 0 && (
         <div className='relative w-[20px]x h-[20px]x'>

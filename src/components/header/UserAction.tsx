@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/authContext';
+import Translatable from '../translatable_text/Translatable';
 
 export const UserActions: React.FC = () => {
   const { currentUser } = useContext(AuthContext);
@@ -9,7 +10,7 @@ export const UserActions: React.FC = () => {
       {currentUser ? (
         <>
           <a href="#" className="w-[40px] h-[40px] rounded-full flex items-center justify-center bg-secondary-50 text-primary">
-            <span>User</span>
+            <span><Translatable>User</Translatable></span>
           </a>
         </>
       ) : (
@@ -28,7 +29,7 @@ export const LogOut: React.FC = () => {
     <div className="flex items-center gap-4">
       {currentUser && (
         <button onClick={logout} className="w-[40px] h-[40px] rounded-full flex items-center justify-center text-red-600 ">
-          <span>logout</span>
+          <span><Translatable>logout</Translatable></span>
         </button>
       )}
     </div>

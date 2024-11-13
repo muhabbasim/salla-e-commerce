@@ -7,18 +7,24 @@ import ReactQueryProvider from './providers/ReactQeuryProvider'
 import { CartProvider } from './context/CartContext'
 import { Toaster } from 'sonner'
 import Spinner from './components/spinner/Spinner'
+import store from './store/Store'
+import { Provider } from 'react-redux'
+import './utils/i18n.ts'
+
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter basename='/'>
-    <AuthContextProvider>
-      <ReactQueryProvider>
-        <CartProvider>
-          <Suspense fallback={<Spinner/>}>
-            <Toaster/>
-            <App />
-          </Suspense>
-        </CartProvider>
-      </ReactQueryProvider>
-    </AuthContextProvider>
+    <Provider store={store}>
+      <Suspense fallback={<Spinner/>}>
+        <AuthContextProvider>
+          <ReactQueryProvider>
+            <CartProvider>
+              <Toaster/>
+              <App />
+            </CartProvider>
+          </ReactQueryProvider>
+        </AuthContextProvider>
+      </Suspense>
+    </Provider>
   </BrowserRouter>
 )

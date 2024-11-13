@@ -1,6 +1,7 @@
 import React from 'react';
 import ErrorImg from '@/assets/images/errorimg.svg'; // Update with the correct path
-import ClickButton from '../components/buttons/ClickButton';
+import Translatable from '@/components/translatable_text/Translatable';
+import ButtonComponent from '@/components/buttons/ButtonComponent';
 
 const NotFoundPage: React.FC = () => {
   const handleRoutes = () => {
@@ -15,9 +16,13 @@ const NotFoundPage: React.FC = () => {
         </div>
         <h1 className="text-4xl font-bold mb-4">Opps!!!</h1>
         <h4 className="text-xl text-gray-600 mb-4">
-          الصفحة التي تبحث عنها غير موجودة
+          <Translatable>You cant access this page</Translatable>
         </h4>
-        <ClickButton buttonFunc={handleRoutes} title='العودة إلى الرئيسية'/>
+        <ButtonComponent 
+          className="w-full bg-primary text-white p-3 rounded-md" 
+          onClick={handleRoutes} 
+          title="Go back"
+        />
       </div>
     </div>
   );
