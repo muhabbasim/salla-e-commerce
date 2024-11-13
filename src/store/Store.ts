@@ -29,3 +29,4 @@ export const { dispatch } = store;
 export const useDispatch = () => useAppDispatch<AppDispatch>();
 export const useSelector: TypedUseSelectorHook<AppState> = useAppSelector;
 
+export default store;

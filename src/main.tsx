@@ -13,8 +13,8 @@ import { store } from './store/Store'
 
 
 createRoot(document.getElementById('root')!).render(
-    <Provider store={store}>
   <BrowserRouter basename='/'>
+    <Provider store={store}>
       <Suspense fallback={<Spinner/>}>
         <AuthContextProvider>
           <ReactQueryProvider>
@@ -25,6 +25,6 @@ createRoot(document.getElementById('root')!).render(
           </ReactQueryProvider>
         </AuthContextProvider>
       </Suspense>
-  </BrowserRouter>
     </Provider>
+  </BrowserRouter>
 )
