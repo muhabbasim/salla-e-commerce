@@ -1,5 +1,4 @@
 import React from 'react';
-import ErrorMsg from './ErrorMsg';
 
 interface InputFieldProps {
   type?: string;

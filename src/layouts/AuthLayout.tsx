@@ -1,4 +1,4 @@
-import { Navigate, Outlet, useNavigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import Footer from '../components/Footer'
 import Header from '../components/Header';
 import { useContext } from 'react';
