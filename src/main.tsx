@@ -8,8 +8,8 @@ import { CartProvider } from './context/CartContext'
 import { Toaster } from 'sonner'
 import Spinner from './components/spinner/Spinner'
 import { Provider } from 'react-redux'
-import { store } from './store/Store'
 import './utils/i18n.ts'
+import store from './store/Store'
 
 
 createRoot(document.getElementById('root')!).render(
