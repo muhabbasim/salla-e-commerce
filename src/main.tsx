@@ -7,8 +7,8 @@ import ReactQueryProvider from './providers/ReactQeuryProvider'
 import { CartProvider } from './context/CartContext'
 import { Toaster } from 'sonner'
 import Spinner from './components/spinner/Spinner'
-import store from './store/Store'
 import { Provider } from 'react-redux'
+import { store } from './store/Store'
 import './utils/i18n.ts'
 
 
