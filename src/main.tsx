@@ -9,12 +9,12 @@ import { Toaster } from 'sonner'
 import Spinner from './components/spinner/Spinner'
 import { Provider } from 'react-redux'
 import './utils/i18n.ts'
-import store from './store/Store'
+import { store } from './store/Store'
 
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter basename='/'>
     <Provider store={store}>
+  <BrowserRouter basename='/'>
       <Suspense fallback={<Spinner/>}>
         <AuthContextProvider>
           <ReactQueryProvider>
@@ -25,6 +25,6 @@ createRoot(document.getElementById('root')!).render(
           </ReactQueryProvider>
         </AuthContextProvider>
       </Suspense>
-    </Provider>
   </BrowserRouter>
+    </Provider>
 )

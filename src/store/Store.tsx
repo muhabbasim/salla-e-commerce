@@ -9,7 +9,7 @@ import {
   TypedUseSelectorHook,
 } from 'react-redux';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     customizer: CustomizerReducer,
   },
@@ -29,4 +29,3 @@ export const { dispatch } = store;
 export const useDispatch = () => useAppDispatch<AppDispatch>();
 export const useSelector: TypedUseSelectorHook<AppState> = useAppSelector;
 
-export default store;
